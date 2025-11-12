@@ -1,0 +1,9 @@
+Recommendation,Condition,Description
+Urgent review — high hypoglycemia risk,pct_hypo >= 0.03,Hypoglycemia is defined as CGM_mmol < 4.
+Escalate to clinic / medication change,avg_glucose > 11 OR pct_hyper > 0.20,Severe hyperglycemia is defined as CGM_mmol > 13.9.
+Adjust basal rates / background insulin,nocturnal_high > 0.25,High glucose (CGM_mmol > 10) during nocturnal hours (0-6 AM).
+Adjust bolus / carb ratio,postprandial_spikes > 0.15 AND avg_glucose > 8.5,Significant spikes (>2 mmol/L increase) after meals (proxy: large positive CGM_diff) when overall glucose is high.
+Consider pump algorithm / mode change,risk_ratio > 0.35 AND avg_glucose > 9,High overall risk of abnormal glucose and elevated average glucose.
+Refer to education / dietitian,variability > 3.0 AND risk_ratio < 0.3,"High glucose variability despite a relatively lower risk of being in abnormal zones, suggesting erratic patterns."
+Review insulin settings / dietary pattern,risk_ratio > 0.25 OR avg_glucose >= 9,Moderate overall risk of abnormal glucose or elevated average glucose.
+Stable — continue monitoring,None of the above,Default recommendation if no other specific clinical condition is met.
